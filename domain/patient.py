@@ -76,13 +76,5 @@ class Patient:
         """
         self.disease = disease
 
-    def sort_by_age(self, list_of_patients):
-        """
-        Sorts the list of patients by age.
-        """
-        for i in range(len(list_of_patients)):
-            for j in range(i+1,len(list_of_patients)):
-                if i.get_age() < j.get_age():
-                    i,j=j,i
-        return list_of_patients
+    
     

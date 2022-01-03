@@ -1,7 +1,7 @@
 from domain.patient import Patient
-
+from general.general import sort
 class Department:
-    def __init__(self,id,name,capacity,patients):
+    def __init__(self,id,name,capacity,patients: list):
         self.id = id
         self.name = name
         self.capacity = capacity
@@ -74,8 +74,10 @@ class Department:
         """
         self.patients.remove(patient)
 
+    def criteriu(self, index1, index2):
+        if self.patients[index1].get_age() < self.patients[index2].get_age():
+            return True
+        return False
+
     def sort_patient_by_age(self):
-        """
-        Sorts the patients in the department
-        """
-        self.patients.sort_by_age(self.patients)
+        sort(self.patients, self.criteriu)

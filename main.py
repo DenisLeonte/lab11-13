@@ -151,6 +151,8 @@ while(True):
                 print('Invalid index')
                 index = int(input('Enter the index: '))
             dep_repo.sort_patient_by_age(index)
+            print(dep_repo.departments[index])
+            #FIXME: Print the sorted results
         else:
             print('The list is empty')
     else:
